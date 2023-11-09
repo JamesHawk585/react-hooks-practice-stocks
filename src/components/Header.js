@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <h1 className="text-center">Flatiron Stock Exchange</h1>
+      <h1 className="text-center">Flatiron 💲tock Exchange</h1>
     </header>
   );
 }

@@ -25,6 +25,29 @@ After the stocks are fetched, your job is to:
 - Render all the stocks onto the page. The styling of how a Stock should look
   like is already in the `Stock` component.
 
+
+
+  Bring stocks in at MainContainer.js 
+  # Presumed Steps: 
+
+  MainContainer:
+  1. [x] Stocks/setStocks useState hook
+  2. [x] fetch request that gets all stock in MainContainer.js
+   ~~[] Use a generator expression to create a list of stock objects~~
+        - We already have an array of stock objects from the fetch request.  
+  3. [] pass stockList as a prop to StockContiner.js 
+  4. [] Append to dom in MainContainer.js using a generator expression.
+  4. [] Event Listener to add stock to portfolio array
+
+  PortfolioContainer:
+  1. portfolio/setPortfolio hooks to create an array of stock objects 
+  2. use generator expression to create a list of stock objects 
+  3. pass as props to PortfolioContainer to append to dom 
+
+  Steps: 
+  1. [x] Stocks/setStocks useState hook
+  2. [x] fetch request that gets all stock in MainContainer.js
+
 - Allow a user to buy a stock by clicking on it and when it is bought, it should
   be added to `MyPortfolio`.
 
