@@ -31,13 +31,26 @@ After the stocks are fetched, your job is to:
   # Presumed Steps: 
 
   MainContainer:
-  1. [x] Stocks/setStocks useState hook
-  2. [x] fetch request that gets all stock in MainContainer.js
+  1. [x] Stocks/setStocks useState hook with an empty array.
+  2. [x] useEffect/fetch request that gets all stock in MainContainer.js and pass to StockContainer.js.
    ~~[] Use a generator expression to create a list of stock objects~~
         - We already have an array of stock objects from the fetch request.  
-  3. [] pass stockList as a prop to StockContiner.js 
-  4. [] Append to dom in MainContainer.js using a generator expression.
+  3. [x] pass stocks as a prop to StockContiner.js 
+  4. [] Append StockContainer component to dom in MainContainer.js. Pass stocks state to StockContainer as props. 
+  5. [] Create event handler handleAddStockToPortfolio. Pass to StockContainer.js as props. 
   4. [] Event Listener to add stock to portfolio array
+
+  StockContainer:
+  1. [] Take stocks as props from MainContainer.js. 
+  2. [] Use a genrator expression to map through the stock list and create a new Stock conponent for each object in the stocks array: 
+    - A generator expression always uses the .map() emthod. It is typically used to create an array of components. 
+  3. [] Append sotckList to the DOM in StocklContainer.js:  
+    -   return (
+          <div>
+            <h2>Stocks</h2>
+            {stockList}
+          </div>
+        );
 
   PortfolioContainer:
   1. portfolio/setPortfolio hooks to create an array of stock objects 
@@ -60,3 +73,6 @@ After the stocks are fetched, your job is to:
 - Allow a user to filter stocks based on the type of the stock.
 
 Best of luck!
+
+Remove Stocks from Portfolio:
+1.  
