@@ -40,12 +40,30 @@ const sortedStocks = [...stocks].sort((stockA, stockB) => {
     return stockA.price - stockB.price
   }
 })
+
+const filteredStocks = sortedStocks.filter(stock => {
+  if (filterBy === "All") {
+    return true 
+  } else {
+    return stock.type.toLowerCase() === filterBy.toLowerCase()
+  }})
+
+
+
   return (
     <div>
-      <SearchBar sortBy={sortBy} setSortBy={setSortBy} filterBy={filterBy} setFilterBy={setFilterBy}/>
+      <SearchBar 
+        sortBy={sortBy} 
+        setSortBy={setSortBy} 
+        filterBy={filterBy} 
+        setFilterBy={setFilterBy}
+      />
       <div className="row">
         <div className="col-8">
-          <StockContainer stocks={sortedStocks} onStockClick={handleAddStockToPortfolio}/>
+          <StockContainer 
+            stocks={filteredStocks} 
+            onStockClick={handleAddStockToPortfolio}
+          />
         </div>
         <div className="col-4">
           <PortfolioContainer portfolio={portfolio} onStockClick={handleRemoveStockFromPortfolio}/>
