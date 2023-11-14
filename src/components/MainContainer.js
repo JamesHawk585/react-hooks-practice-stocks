@@ -33,14 +33,19 @@ function handleRemoveStockFromPortfolio(removedStock) {
   setPortfolio(filteredPortfolio)
 }
 
-console.log(sortBy)
-console.log(filterBy)
+const sortedStocks = [...stocks].sort((stockA, stockB) => {
+  if (sortBy === "Alphabetically") {
+    return stockA.name.localeCompare(stockB.name)
+  } else {
+    return stockA.price - stockB.price
+  }
+})
   return (
     <div>
       <SearchBar sortBy={sortBy} setSortBy={setSortBy} filterBy={filterBy} setFilterBy={setFilterBy}/>
       <div className="row">
         <div className="col-8">
-          <StockContainer stocks={stocks} onStockClick={handleAddStockToPortfolio}/>
+          <StockContainer stocks={sortedStocks} onStockClick={handleAddStockToPortfolio}/>
         </div>
         <div className="col-4">
           <PortfolioContainer portfolio={portfolio} onStockClick={handleRemoveStockFromPortfolio}/>
